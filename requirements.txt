@@ -1,0 +1,17 @@
+langchain
+langchain-core
+langchain-community
+
+langchain-google-genai
+google-generativeai
+langchain-experimental
+
+python-dotenv
+
+pandas
+numpy
+tabulate
+matplotlib
+seaborn
+streamlit
+scikit-learn
