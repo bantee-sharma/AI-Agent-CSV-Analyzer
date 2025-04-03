@@ -16,6 +16,7 @@ Supports dynamic question-answering on tabular data.
 Technologies Used:
 
 ✅ Python
+
 ✅ LangChain
 ✅ Google Gemini AI
 ✅ Matplotlib & Seaborn (for visualizations)
