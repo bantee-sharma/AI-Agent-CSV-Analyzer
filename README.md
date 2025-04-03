@@ -20,6 +20,7 @@ Technologies Used:
 ✅ LangChain
 
 ✅ Google Gemini AI
+
 ✅ Matplotlib & Seaborn (for visualizations)
 ✅ Pandas & NumPy (for data handling)
 
