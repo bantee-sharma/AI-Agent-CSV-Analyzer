@@ -22,5 +22,6 @@ Technologies Used:
 ✅ Google Gemini AI
 
 ✅ Matplotlib & Seaborn (for visualizations)
+
 ✅ Pandas & NumPy (for data handling)
 
