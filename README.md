@@ -14,7 +14,7 @@ Built with LangChain's CSV Agent for seamless file processing.
 
 Supports dynamic question-answering on tabular data.
 
-Technologies Used:
+**Technologies Used:**
 
 ✅ Python
 
