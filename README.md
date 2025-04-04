@@ -2,7 +2,7 @@
 
 This project leverages LangChain and Google Gemini AI to build an intelligent agent that analyzes CSV files and provides insights through natural language queries. The agent can generate visualizations, such as bar plots, and perform data-driven analysis automatically.
 
-Features:
+**Features:**
 Uses Gemini-2.0-Flash as the LLM.
 
 AI-powered CSV data analysis via natural language queries.
