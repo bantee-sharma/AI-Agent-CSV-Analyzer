@@ -15,7 +15,7 @@ def func(input):
 multiply_tool = Tool(
     name="MultiplyNumbers",
     func = func,
-    description="Add two numbers a and b"
+    description="Multiple two numbers a and b"
 )
 
 tools = [multiply_tool]
