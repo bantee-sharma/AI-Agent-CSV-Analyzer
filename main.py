@@ -17,7 +17,7 @@ agent=create_csv_agent(llm,"Bank-Records.csv",verbose=True,allow_dangerous_code=
 
 
 
-ques = 
+ques = "Draw a pie chart of count of people in card type with whole numbers"
 res = agent.invoke(ques)
 time.sleep(5)
 print(res)
