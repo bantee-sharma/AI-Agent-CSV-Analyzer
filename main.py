@@ -16,6 +16,6 @@ agent=create_csv_agent(llm,"Bank-Records.csv",verbose=True,allow_dangerous_code=
 
 
 
-ques = "No. of Customers who belongs to spain"
+ques = "how many people have credit score more than 500"
 res = agent.invoke(ques)
 print(res)
