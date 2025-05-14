@@ -16,6 +16,6 @@ agent=create_csv_agent(llm,"Bank-Records.csv",verbose=True,allow_dangerous_code=
 
 
 
-ques = "Types of cards"
+ques = "No. of Customers who belongs to spain"
 res = agent.invoke(ques)
 print(res)
