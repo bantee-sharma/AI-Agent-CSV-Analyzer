@@ -12,13 +12,30 @@ import seaborn as sns
 load_dotenv()
 
 
-llm = ChatGoogleGenerativeAI(model = "gemini-2.0-flash")
 
-agent  = create_csv_agent(
-    llm, "Bank-Records.csv",
-    verbose=True,allow_dangerous_code = True
-)
+st.header("Csv Analysis")
+uploaded_file = st.file_uploader("Choose a file",type=["csv"])
 
-res = agent.invoke({"input": "Draw a bar plot of count of peole in each country"})
+if uploaded_file is not None:
 
-print(res)
+    df = pd.read_csv(uploaded_file)
+    st.write("Data Preview")
+    st.dataframe(df)
+
+    with open("temp_uploaded.csv", "wb") as f:
+            f.write(uploaded_file.getbuffer())
+
+    llm = ChatGoogleGenerativeAI(model = "gemini-2.0-flash")
+
+    agent  = create_csv_agent(
+        llm=llm,
+        path="temp_uploaded.csv",
+        verbose=True,allow_dangerous_code = True
+    )
+
+
+
+    user_query = st.text_input("Ask something about the CSV data:")
+    if st.button("Submit"):
+        response = agent.run(user_query)
+        st.write(response)
