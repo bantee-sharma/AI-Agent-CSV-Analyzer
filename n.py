@@ -5,6 +5,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 from dotenv import load_dotenv
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 
 load_dotenv()
 
@@ -19,6 +20,6 @@ agent = create_csv_agent(
     
 )
 
-query = "total number of people who have credit sore greater than 500"
+query = "create a bar plot of people count in each country"
 response = agent.invoke(query)
 print(response)
