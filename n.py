@@ -38,5 +38,5 @@ if uploaded_file is not None:
     user_input = st.text_input("Ask anything about this file")
     if st.button("Submit"):
         
-        response = agent.invoke(user_input)
+        response = agent.run(user_input)
         st.write(response)
