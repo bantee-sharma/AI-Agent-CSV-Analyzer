@@ -20,7 +20,7 @@ if uploaded_file is not None:
     st.write("Data Frame")
     st.dataframe(df)
 
-    with open("temp","rb") as f:
+    with open("temp","wb") as f:
         f.write(uploaded_file.getbuffer())
 
     llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash")
@@ -34,7 +34,9 @@ if uploaded_file is not None:
         allow_dangerous_code=True,
         handle_parsing_errors=True)
     
+
+    user_input = st.text_input("Ask anything about this file")
     if st.button("Submit"):
-        user_input = st.text_input("Ask anything about this file")
+        
         response = agent.invoke(user_input)
         st.write(response)
