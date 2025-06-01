@@ -12,7 +12,7 @@ load_dotenv()
 llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash")
 
 df = pd.read_csv("Bank-Records.csv")
-print(df["Geography"].value_counts())
+print(df["Geography"].value_counts().plot(kind="bar"))
 
 '''agent = create_csv_agent(
     llm=llm,
