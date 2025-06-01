@@ -13,7 +13,7 @@ load_dotenv()
 llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash")
 
 st.title("CSV analysis")
-uploaded_file = st.file_uploader(type=["csv"])
+uploaded_file = st.file_uploader("Choose a file",type=["csv"])
 
 
 agent = create_csv_agent(
