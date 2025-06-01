@@ -17,6 +17,7 @@ agent = create_csv_agent(
     path="Bank-Records.csv",
     verbose=True,
     allow_dangerous_code=True,
+    handle_parsing_errors=True
     
 )
 
