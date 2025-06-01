@@ -10,20 +10,31 @@ import streamlit as st
 
 load_dotenv()
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash")
 
 st.title("CSV analysis")
 uploaded_file = st.file_uploader("Choose a file",type=["csv"])
 
+if uploaded_file is not None:
 
-agent = create_csv_agent(
-    llm=llm,
-    path="Bank-Records.csv",
-    verbose=True,
-    allow_dangerous_code=True,
-    handle_parsing_errors=True
+    df = pd.read_csv(uploaded_file)
+    st.write("Data Frame")
+    st.dataframe(df)
+
+    with open("temp","rb") as f:
+        f.write(uploaded_file.getbuffer())
+
+    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash")
+
+
+
+    agent = create_csv_agent(
+        llm=llm,
+        path="temp",
+        verbose=True,
+        allow_dangerous_code=True,
+        handle_parsing_errors=True)
     
-)
-
-query = "create a bar plot of people count in each country"
-response = agent.invoke(query)
+    if st.button("Submit"):
+        user_input = st.text_input("Ask anything about this file")
+        response = agent.invoke(user_input)
+        st.write(response)
