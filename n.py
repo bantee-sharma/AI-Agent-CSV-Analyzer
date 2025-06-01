@@ -6,10 +6,14 @@ from dotenv import load_dotenv
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import streamlit as st
 
 load_dotenv()
 
 llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash")
+
+st.title("CSV analysis")
+
 
 
 agent = create_csv_agent(
@@ -23,4 +27,3 @@ agent = create_csv_agent(
 
 query = "create a bar plot of people count in each country"
 response = agent.invoke(query)
-print(response)
